@@ -7,10 +7,13 @@
 // 后续部署不会被覆盖。
 // =============================================================================
 {
-  "name": "openlist-tsworkers",
+  "name": "openlist-worker",
   "main": "src/backend/worker.ts",
   "compatibility_date": "2026-08-04",
   "compatibility_flags": ["nodejs_compat"],
+
+  // ✅ 新增：Smart Placement，让 Worker 跑在离 Google API / D1 更近的地方
+  "placement": { "mode": "smart" },
 
   // ✅ 已改：开启 *.workers.dev 网址
   "workers_dev": true,
